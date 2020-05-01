@@ -233,6 +233,8 @@ static void USB_Service(void)
 
 void bootloader(void)
 {
+  PORT->Group[0].DIR.reg = (1UL << 14);
+  PORT->Group[0].OUT.reg = (1UL << 14);
 #ifndef USE_DBL_TAP
   /* configure PA15 (bootloader entry pin used by SAM-BA) as input pull-up */
   PORT->Group[0].PINCFG[15].reg = PORT_PINCFG_PULLEN | PORT_PINCFG_INEN;
