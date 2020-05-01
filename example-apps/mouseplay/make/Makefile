@@ -33,7 +33,7 @@ SRCS += \
   ../startup_samd11.c
 
 DEFINES += \
-  -D__SAMD11C14A__ \
+  -D__SAMD11D14AS__ \
   -DDONT_USE_CMSIS_INIT \
   -DSTARTUP_FROM_RESET \
   -DF_CPU=48000000 
