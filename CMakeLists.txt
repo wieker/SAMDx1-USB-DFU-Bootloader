@@ -1,7 +1,19 @@
 cmake_minimum_required(VERSION 3.16)
-project(SAMDx1_USB_DFU_Bootloader)
+project(SAMDx1_USB_DFU_Bootloader C ASM)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_VERBOSE_MAKEFILE 1)
+
+set(OPENOCD_BINARY "/home/wieker/Projects/linux/hackrf/openocd-bin/bin/openocd")
+set(CMAKE_C_STANDARD 99)
+
+set(CMAKE_C_COMPILER "/usr/bin/arm-none-eabi-gcc")
+set(CMAKE_ASM_COMPILER "/usr/bin/arm-none-eabi-gcc")
+
+set(ARCH_FLAGS "\
+        -mcpu=cortex-m0 \
+        -g3 \
+")
 
 include_directories(.)
 include_directories(include)
