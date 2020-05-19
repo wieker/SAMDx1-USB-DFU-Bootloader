@@ -10,9 +10,12 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_COMPILER "/usr/bin/arm-none-eabi-gcc")
 set(CMAKE_ASM_COMPILER "/usr/bin/arm-none-eabi-gcc")
 
-set(ARCH_FLAGS "\
-        -mcpu=cortex-m0 \
+set(CMAKE_C_FLAGS "\
+        -mcpu=cortex-m0plus -mthumb \
         -g3 \
+        -D__SAMD11D14AM__ \
+        -DDONT_USE_CMSIS_INIT \
+        -DSTARTUP_FROM_RESET \
 ")
 
 include_directories(.)
