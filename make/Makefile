@@ -65,8 +65,8 @@ $(BUILD)/$(BIN).bin: $(BUILD)/$(BIN).elf
 	@$(CC) $(CFLAGS) $(filter %/$(subst .o,.c,$(notdir $@)), $(SRCS)) -c -o $@
 
 $(BUILD)/startup.o: ../startup.s
-	@echo CC $@
-	@$(CC) -x assembler-with-cpp $(ASFLAGS) -c -o $@ $<
+	echo CC $@
+	$(CC) -x assembler-with-cpp $(ASFLAGS) -c -o $@ $<
 
 directory:
 	@$(MKDIR) -p $(BUILD)
